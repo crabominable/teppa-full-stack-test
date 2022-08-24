@@ -6,9 +6,9 @@ Funcionando em um mono-repo, bastando apenas configurar o arquivo .env (a pasta 
 
 -------------------------------------
 
-Fullstack application in TypeScript as a language, Express for managing routes and backend middleware, Postgresql as a relational database, Prisma as ORM, React on the frontend with Axios for managing requests and Redux for the global state.
+Fullstack application in TypeScript as a language, Express for managing routes and middleware on the backend, FireStore as a database, React on the frontend with Axios for managing requests and Redux for the global state.
 
-Working in a mono-repo which can be run using postgresql locally, just configure the .env file (the backend folder has an example file), run postgresql with docker or run docker-compose to upload both applications in containers (database, frontend and backend).
+Working in a mono-repo, just configure the .env file (the backend folder has an example file), run docker-compose to upload both applications in containers (frontend and backend).
 
 ## Prerequisites
 
