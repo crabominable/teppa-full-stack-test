@@ -13,7 +13,7 @@ abstract class Controller<T> {
 
   abstract create(
     req: Request,
-    res: Response<T | TResponseError>,
+    res: Response<TResponseError>,
   ): Promise<typeof res>;
 
   abstract getAll(
