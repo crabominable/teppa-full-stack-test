@@ -1,14 +1,30 @@
 ## Aplicação para o teste full stack da Teppa!
 
-Aplicação fullstack em TypeScript como linguagem, Express para o gerenciamento de rotas e middlewares do backend, FireStore como banco, React no frontend com Axios para o gerenciamento das requisições e Redux para o estado global.
+### Backend:
 
-Funcionando em um mono-repo, bastando apenas configurar o arquivo .env (a pasta backend possui um arquivo de exemplo), rodar o docker-compose para subir ambas as aplicações em containers (frontend e backend).
+TypeScript como linguagem, Express para o gerenciamento de rotas e middlewares do backend e o FireStore da Google como banco.
+
+### Frontend:
+
+React no frontend com Axios para o gerenciamento das requisições e Redux para o estado global.
+
+### CI/CD, Deploy e integração:
+
+Deploy do backend feito no heroku com docker, utilizando a stack container. Testes de integração do backend rodando com integração contínua no Github Actions.
 
 -------------------------------------
 
-Fullstack application in TypeScript as a language, Express for managing routes and middleware on the backend, FireStore as a database, React on the frontend with Axios for managing requests and Redux for the global state.
+### Backend:
 
-Working in a mono-repo, just configure the .env file (the backend folder has an example file), run docker-compose to upload both applications in containers (frontend and backend).
+TypeScript as a language, Express for managing routes and backend middleware and Google's FireStore as a database.
+
+### Frontend:
+
+React on the frontend with Axios for managing requests and Redux for the global state.
+
+### CI/CD, Deploy and integration:
+
+Deployment of the backend made in heroku with docker, using the stack container. Backend integration tests running with continuous integration on Github Actions.
 
 ## Prerequisites
 
