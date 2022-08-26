@@ -26,17 +26,14 @@ class UserController extends Controller<User> {
 
   create = async (
     req: Request,
-    res: Response<User | TResponseError>,
+    res: Response<TResponseError>,
   ): Promise<typeof res> => {
     const { body } = req;
     try {
-      const car = await this.service.create(body);
-      if (!car) {
-        return res.status(this.statusCode.NotFound)
-          .json(car);
-      }
+      await this.service.create(body);
+      
       return res.status(this.statusCode.Created)
-        .json(car);
+        .json();
     } catch (err) {
       return res.status(this.statusCode.Internal)
         .json({ error: this.statusCode.Internal });
@@ -63,7 +60,7 @@ class UserController extends Controller<User> {
     const { id } = req.params;
     try {
       const user = await this.service.getOne(id);
-      if (!user) {
+      if (user.error === 'user not found') {
         return res.status(this.statusCode.NotFound)
           .json({ error: this.objectNotFound });
       }
@@ -80,7 +77,7 @@ class UserController extends Controller<User> {
     const { id } = req.params;
     try {
       const updatedCar = await this.service.update(id, req.body);
-      if (!updatedCar) {
+      if (updatedCar.error === 'user not found') {
         return res.status(this.statusCode.NotFound)
           .json({ error: this.objectNotFound });
       }
@@ -96,12 +93,11 @@ class UserController extends Controller<User> {
   ): Promise<typeof res> => {
     const { id } = req.params;
     try {
-      const car = await this.service.delete(id);
-      if (!car) {
+      const deletedUser = await this.service.delete(id);
+      if (deletedUser.error === 'user not found') {
         return res.status(this.statusCode.NotFound)
-          .json({ error: this.objectNotFound });
+          .json({ error: this.objectNotFound })
       }
-      await this.service.delete(id);
       return res.status(this.statusCode.NoContent).json();
     } catch (err) {
       console.log(err);

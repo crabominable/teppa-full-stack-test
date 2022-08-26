@@ -1,0 +1,21 @@
+{
+  "name": "teppa-full-stack-test",
+  "version": "1.0.0",
+  "description": "Backend do projeto teppa-full-stack-test",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:integration:backend": "cd backend && npm run test:integration:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crabominable/teppa-full-stack-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crabominable/teppa-full-stack-test/issues"
+  },
+  "homepage": "https://github.com/crabominable/teppa-full-stack-test#readme"
+}

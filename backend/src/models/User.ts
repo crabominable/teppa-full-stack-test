@@ -3,6 +3,7 @@ import { getFirestore } from 'firebase-admin/firestore';
 import 'dotenv/config';
 
 import User from '../interfaces/IUser';
+import { isDataView } from 'util/types';
 
 class UserModel {
   db: any;
@@ -29,7 +30,7 @@ class UserModel {
     const finalRes: string[] = [];
 
     allUsers.forEach((doc: any) => {
-      finalRes.push(doc.data());
+      finalRes.push({ id: doc.id, ...doc.data()});
     });
 
     return finalRes;
@@ -40,7 +41,7 @@ class UserModel {
 
     const uniqueUser = await userCollection.get();
 
-    const finalRes = { ...uniqueUser.data() }
+    const finalRes = { id: uniqueUser.id, ...uniqueUser.data() }
 
     return finalRes;
   };
@@ -51,9 +52,14 @@ class UserModel {
   ) => {
     const userCollection = this.db.collection('users').doc(id);
 
-    const updatedUser = await userCollection.doc(id).update({ ...user })
+    await userCollection.update({ ...user });
 
-    return updatedUser;
+    const finalRes = {
+      id,
+      ...user
+    }
+
+    return finalRes;
   };
 
   delete = async (
@@ -61,9 +67,7 @@ class UserModel {
   ) => {
     const userCollection = this.db.collection('users');
 
-    const deletedUser = await userCollection.doc(id);
-
-    return deletedUser;
+    await userCollection.doc(id).delete();
   };
 }
 
