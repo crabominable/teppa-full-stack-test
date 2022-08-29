@@ -54,7 +54,7 @@ class UserService {
 
   delete = async (
     id: string,
-  ): Promise<User> => {
+  ): Promise<string | TResponseError> => {
     const uniqueUser = await this.getOne(id);
 
     const notFound = { error: '' }
@@ -63,9 +63,9 @@ class UserService {
       notFound.error = 'user not found'
     }
 
-    const deletedUser = await this.model.delete(id);
+    await this.model.delete(id);
     
-    return notFound.error === 'user not found' ? notFound : deletedUser;
+    return notFound.error === 'user not found' ? notFound : notFound;
   };
 }
 

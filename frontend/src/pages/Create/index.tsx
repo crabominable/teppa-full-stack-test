@@ -1,8 +1,19 @@
 import React from 'react';
 
+import {
+  Header,
+  Form,
+} from '../../components';
+
+import './main.css';
+
 function Create() {
   return (
-    <h1>Create</h1>
+    <div>
+      <Header />
+      <h2 className='create-page-container'>Create Page</h2>
+      <Form />
+    </div>
   )
 }
 
