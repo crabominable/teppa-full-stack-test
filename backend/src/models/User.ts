@@ -3,7 +3,6 @@ import { getFirestore } from 'firebase-admin/firestore';
 import 'dotenv/config';
 
 import User from '../interfaces/IUser';
-import { isDataView } from 'util/types';
 
 class UserModel {
   db: any;
@@ -66,7 +65,7 @@ class UserModel {
     id: string,
   ) => {
     const userCollection = this.db.collection('users');
-
+    
     await userCollection.doc(id).delete();
   };
 }
