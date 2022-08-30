@@ -6,7 +6,7 @@ TypeScript como linguagem, Express para o gerenciamento de rotas e middlewares d
 
 ### Frontend:
 
-React no frontend com Axios para o gerenciamento das requisições, Joi para validações e Redux para o estado global.
+React no frontend com Axios para o gerenciamento das requisições, lib e hook do formik para facilitar a criação de formulário controlado, Joi para validações e Redux para o estado global.
 
 ### CI/CD, Deploy e integração:
 
