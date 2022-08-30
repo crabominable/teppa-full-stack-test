@@ -10,7 +10,11 @@ React no frontend com Axios para o gerenciamento das requisições, Joi para val
 
 ### CI/CD, Deploy e integração:
 
-Deploy do backend feito no heroku com docker, utilizando a stack container. Testes de integração do backend rodando com integração contínua no Github Actions.
+Deploy do backend feito no heroku com docker, utilizando a stack container. Testes de integração do backend rodando com integração contínua no Github Actions. Frontend no firebase hosting.(Não realizado pelos problemas citados abaixo)
+
+### Alguns problemas:
+
+A implementação do FireStore como banco de dados ocorreu tudo certo, mas o deploy no docker eu não consegui fazer porque os buildpacks que eu tentei para gerar não funcionaram, e não consegui executar outra possível solução. E o deploy no cloud run do GCP falta a conta de faturamento que não consigo criar por um erro.
 
 -------------------------------------
 
@@ -25,6 +29,10 @@ React on the frontend with Axios for managing requests, Joi for validations and 
 ### CI/CD, Deploy and integration:
 
 Deployment of the backend made in heroku with docker, using the stack container. Backend integration tests running with continuous integration on Github Actions.
+
+### Some troubles:
+
+The FireStore implementation as a database all went well, but the deploy in docker I couldn't do because the buildpacks I tried to generate didn't work, and I couldn't run another possible solution. And the GCP cloud run deploy is missing the billing account that I can't create due to an error.
 
 ## Prerequisites
 
