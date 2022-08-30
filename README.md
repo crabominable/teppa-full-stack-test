@@ -71,6 +71,8 @@ cd backend
 npm i
 ```
 
+- Create the .env file(like in .env.example)
+
 - Start the aplication:
 
 ```bash
